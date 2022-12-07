@@ -30,7 +30,7 @@ include_directories(
   ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(rgb_pose_estimation src/rgb_pose_estimation.cpp)
+add_executable(rgb_pose_estimation src/main.cpp)
 target_link_libraries(rgb_pose_estimation ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(check_version src/check_version.cpp)
