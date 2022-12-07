@@ -13,6 +13,9 @@
 using namespace std;
 using namespace cv;
 
+#define BOARD_LENGTH 3.3
+#define GAP 0.7
+
 //--------------------- 변수 선언 -----------------------------------
 
 cv::Mat image, imageCopy;
@@ -22,7 +25,7 @@ std::vector<int> ids;
 std::vector<std::vector<cv::Point2f> > corners;
 cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
 
-cv::Ptr<cv::aruco::GridBoard> board = cv::aruco::GridBoard::create(5, 7,3.3, 0.7, dictionary);
+cv::Ptr<cv::aruco::GridBoard> board = cv::aruco::GridBoard::create(5, 7,BOARD_LENGTH, GAP, dictionary);
 
 cv::Mat intrinsic_parameter = (cv::Mat1d(3,3) << 950.3955649641379, 0, 617.4085543989751,
                                              0, 949.664898671666, 384.055444194634,
